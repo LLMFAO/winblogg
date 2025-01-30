@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --retro-bg: #b4e3e3;
+    --retro-cream: #f5e6d8;
+    --window-bg: #ffffff;
+    --button-bg: #e5f5f5;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: none;
+    font-smooth: never;
+  }
+}
+
+.retro-window {
+  @apply overflow-hidden bg-white;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.retro-window-title {
+  @apply bg-white text-black px-3 py-1;
+  border-bottom: 2px solid #000;
+  height: 32px; /* Desktop height */
+}
+
+@media (max-width: 768px) {
+  .retro-window-title {
+    height: 48px; /* Mobile height */
+    @apply px-4 py-2;
+  }
+  
+  .retro-window-title button {
+    @apply w-6 h-6; /* Larger close button on mobile */
+  }
+}
+
+.retro-button {
+  @apply px-4 py-1 bg-[var(--button-bg)] border-2 border-black rounded;
+}
+
+.retro-button:hover {
+  @apply bg-[#d5e5e5];
+}
+
+.desktop-icon {
+  @apply flex flex-col items-center p-1.5 cursor-pointer w-16;
+}
+
+.desktop-icon-box {
+  @apply p-1 mb-1 bg-transparent;
+}
+
+.desktop-icon-text {
+  @apply text-black text-xs text-center font-medium;
+}
+
+.progress-bar {
+  @apply w-full h-6 bg-white border-2 border-black mt-4;
+}
+
+.progress-bar-inner {
+  @apply h-full bg-black;
+  width: 17%;
+}
